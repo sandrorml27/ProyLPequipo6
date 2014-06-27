@@ -115,7 +115,19 @@ main()
 }
 
 
-
+  /*pra acceder al los primeros hacer un  recorrido del archivo con
+   main()
+{
+char caracter;
+ifstream archivo("C:/BC5/Archivos/miarchivo.txt", ios::in);
+while(!archivo.eof())
+{
+archivo.get(caracter);
+cout<<caracter;
+}
+archivo.close();
+getch();
+}   */
 
 
 
