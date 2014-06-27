@@ -6,6 +6,7 @@
 #include <fstream>//utilizacion de la funcion ofstream
 #include <iostream> //utilizacion de la funcion getch
 #include <conio>    //utilizacion de la funcion cout
+#include <stdio>
 
 
 
