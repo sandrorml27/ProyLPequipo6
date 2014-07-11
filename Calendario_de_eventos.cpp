@@ -23,10 +23,19 @@ int Principal()
 {
 	clrscr ();
 	int a;
-	cout<<"1.-Ingresar nuevo evento "<<endl;
-   cout<<"2.-Ver mis eventos para hoy "<<endl;
-   cout<<"3.-Ver mis eventos para toda la semana "<<endl;
-   cout<<"4.-SALIR "<<endl;
+   cout<<endl;
+   cout<<endl;
+   cout<<endl;
+   cout<<endl;
+   cout<<endl;
+   cout<<endl;
+   cout<<"				 MENU DE EVENTOS "<<endl;
+   cout<<endl;
+   cout<<endl;
+	cout<<"			1.-INGRESAR NUEVO EVENTO "<<endl;
+   cout<<"			2.-VER MIS EVENTOS PARA HOY "<<endl;
+   cout<<"			3.-VER MIS EVENTOS PARA TODA LA SEMANA "<<endl;
+   cout<<"			4.-SALIR "<<endl;
    cin>>a;
    return (a);
 }
@@ -44,21 +53,55 @@ Ingresar_nuevo_evento()
    int anio;
    char horai[5];
    char horaf[5];
-      	cout<<"ingrese el nombre de el nuevo evento: "<<endl;
+   		clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+      	cout<<"	INGRESE EL NOMBRE DEL NUEVO EVENTO: "<<endl;
          cin>>nuevo_evento;
-      	cout<<"ingrese una descripcion del evento: "<<endl;
+         clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+      	cout<<"	INGRESE LA DESCRIPCION DEL NUEVO EVENTO: "<<endl;
          cin>>descripcion_del_evento;
-      	cout<<"ingrese el dia del evento: "<<endl;
+         clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+      	cout<<"	INGRESE EL DIA DEL EVENTO: "<<endl;
          cin>>dia;
-      	cout<<"ingrese el mes del evento: "<<endl;
+         clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+      	cout<<"	INGRESE EL MES DEL EVENTO: "<<endl;
          cin>>mes;
-      	cout<<"ingrese el año del evento: "<<endl;
+         clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+      	cout<<"	INGRESE EL AÑO DEL EVENTO: "<<endl;
          cin>>anio;
-         cout<<"ingrese la hora a la que inicia el evento: "<<endl;
+         clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<"	INGRESE LA HORA DE INICIO DEL EVENTO: "<<endl;
          cin>>horai;
-         cout<<"ingrese la hora a la que finaliza el evento: "<<endl;
+         clrscr ();
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<endl;
+         cout<<"	INGRESE LA HORA DE FINALIZACION DEL EVENTO: "<<endl;
          cin>>horaf;
-<<<<<<< HEAD
          archivo<<'*'<<dia;
          archivo<<'-'<<mes;
          archivo<<'-'<<anio<<endl;
@@ -66,15 +109,6 @@ Ingresar_nuevo_evento()
          archivo<<descripcion_del_evento<<endl;
          archivo<<horai<<endl;
          archivo<<horaf<<endl<<endl;
-=======
-         archivo<<'*'<<dia<<'-';
-         archivo<<'+'<<mes<<'-';
-         archivo<<'-'<<anio<<endl;
-         archivo<<  nuevo_evento<<endl;
-         archivo<< descripcion_del_evento<<endl;
-         archivo<< horai<<endl;
-         archivo<< horaf<<endl<<'*';
->>>>>>> origin/master
          clrscr ();
 }
 //--------------------------------------------------------------------------------//
@@ -87,105 +121,101 @@ Ver_mis_eventos_para_hoy()
 	tm *horaac =localtime(&t);   //crea un puntero para la hora local
 	cout<<"Fecha actual: "<<endl;
    cout<<"HORA: "<<horaac->tm_hour<<"H"<<horaac->tm_min<<endl<<"FECHA: "<<horaac->tm_mday<<"/"<<(horaac->tm_mon+1)<<"/"<<(horaac->tm_year+1900)<<endl; //punteros a diferentes variables hora fecha.... etc
-   char dia[1];
-   char mes[1];
-	char anio[3];
+   cout<<endl;
+   cout<<endl;
+   char dia[2];
+   char mes[3];
+	char anio[5];
 	char caracter;
 	ifstream archivo("D:miarchivo.txt", ios::in);
 	while(!archivo.eof()) //lee linea por linea
 	{
 		archivo.get(caracter);//lee caracter por caracter
-<<<<<<< HEAD
-      if(caracter=='*')
-      {
-=======
-		cout<<caracter;       //imprime caracter por caracter
       if(caracter=='*')
       {
       	archivo.get(caracter);
->>>>>>> origin/master
          for(int i=0;i<=1;i++)
          {
          	dia[i]=caracter;
             archivo.get(caracter);
          }
-         int comparacionD;
-<<<<<<< HEAD
-      	comparacionD=atoi(dia);//transforma una linea de caracteres en entero
-         if(comparacionD==horaac->tm_mday)
+         int dd;
+      	dd=atoi(dia);//transforma una linea de caracteres en entero
+         int Cdia=horaac->tm_mday;
+         if(dd==Cdia)
          {
-         	archivo.get(caracter);//lee caracter por caracter
       		if(caracter=='-')
       		{
-=======
-      	comparacionD=atoi(dia);
-         if(comparacionD==horaac->tm_mday)
-         {
-         	archivo.get(caracter);//lee caracter por caracter
-				cout<<caracter;       //imprime caracter por caracter
-      		if(caracter=='+')
-      		{
-      			archivo.get(caracter);
->>>>>>> origin/master
-         		for(int j=0;j<=1;j++)
+            	archivo.get(caracter);
+         		for(int j=0;j<1;j++)
          		{
          			mes[j]=caracter;
             		archivo.get(caracter);
          		}
-         		int comparacionm;
-<<<<<<< HEAD
-      			comparacionm=atoi(mes);//transforma una linea de caracteres en entero
-         		if(comparacionm==horaac->tm_mon+1)
+         		int mm;
+               int Cmes=horaac->tm_mon+1;
+      			mm=atoi(mes);//transforma una linea de caracteres en entero
+         		if(mm==Cmes)
          		{
-               	archivo.get(caracter);//lee caracter por caracter
-
       				if(caracter=='-')
       				{
       					archivo.get(caracter);
          				for(int m=0;m<=3;m++)
-=======
-      			comparacionm=atoi(mes);
-         		if(comparacionm==horaac->tm_mon+1)
-         		{
-               	archivo.get(caracter);//lee caracter por caracter
-						cout<<caracter;       //imprime caracter por caracter
-      				if(caracter=='-')
-      				{
-      					archivo.get(caracter);
-         				for(int m=0;m<=1;m++)
->>>>>>> origin/master
          				{
          					anio[m]=caracter;
             				archivo.get(caracter);
          				}
-         				int comparaciona;
-<<<<<<< HEAD
-      					comparaciona=atoi(anio);//transforma una linea de caracteres en entero
-         				if(comparaciona==horaac->tm_year+1900)
+         				float aa;
+                     float Canio;
+                     Canio=horaac->tm_year+1900;
+      					aa=atoi(anio);//transforma una linea de caracteres en entero
+         				if(aa==Canio) //asignar en otra variable entera
          				{
-                     	cout<<"encontrado"; //imprimir 4 lineas
+                     	int a=0;
+                        char cadena[50];
+                     	while(a<5)
+                        {
 
-=======
-      					comparaciona=atoi(anio);
-         				if(comparaciona==horaac->tm_year+1900)
-         				{
->>>>>>> origin/master
+                           if(a=0)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<" "<<cadena<<endl;
+                           }
+                           if(a=1)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"NOMBRE DEL EVENTO:	"<<cadena<<endl;
+                           }
+                           if(a=2)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"DESCRIPCION DEL EVENTO:	"<<cadena<<endl;
+                           }
+                           if(a=3)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"HORA DE INICIO:		"<<cadena<<":00"<<endl;
+                           }
+                           if(a=4)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"HORA DE FINALIZACION:	"<<cadena<<":00"<<endl;
+                           }
+
+                           a++;
+                        }
+
          				}
          			}
          		}
 				}
 			}
    	}
-<<<<<<< HEAD
       archivo.get(caracter);
-		getch();
+
 	}
+   	getch();
 		archivo.close();
-=======
-		archivo.close();
-		getch();
-	}
->>>>>>> origin/master
 }
 //--------------------------------------------------------------------------------//
 //--------------------------------------------------------------------------------//
@@ -193,46 +223,51 @@ Ver_mis_eventos_para_hoy()
 Ver_mis_eventos_para_toda_la_semana()
 {
    cout<<"lista de eventos "<<endl;
-<<<<<<< HEAD
    	clrscr ();
 	time_t t=time(0); //pone el reloj a cero
 	tm *horaac =localtime(&t);   //crea un puntero para la hora local
 	cout<<"Fecha actual: "<<endl;
    cout<<"HORA: "<<horaac->tm_hour<<"H"<<horaac->tm_min<<endl<<"FECHA: "<<horaac->tm_mday<<"/"<<(horaac->tm_mon+1)<<"/"<<(horaac->tm_year+1900)<<endl; //punteros a diferentes variables hora fecha.... etc
+   cout<<endl;
+   cout<<endl;
    char dia[1];
    char mes[1];
 	char anio[3];
 	char caracter;
-	ifstream archivo("D:miarchivo.txt", ios::in);
+   ifstream archivo("D:miarchivo.txt", ios::in);
+
 	while(!archivo.eof()) //lee linea por linea
+	{
+   for(int t=0;t<=7;t++)
 	{
 		archivo.get(caracter);//lee caracter por caracter
       if(caracter=='*')
       {
+      	archivo.get(caracter);
          for(int i=0;i<=1;i++)
          {
          	dia[i]=caracter;
             archivo.get(caracter);
          }
-         int comparacionD;
-      	comparacionD=atoi(dia);//transforma una linea de caracteres en entero
-         if(comparacionD==horaac->tm_mday)
+         int dd;
+      	dd=atoi(dia);//transforma una linea de caracteres en entero
+         int Cdia=horaac->tm_mday+t;
+         if(dd==Cdia)
          {
-         	archivo.get(caracter);//lee caracter por caracter
-      		if(caracter=='+')
+      		if(caracter=='-')
       		{
-         		for(int j=0;j<=1;j++)
+            	archivo.get(caracter);
+         		for(int j=0;j<1;j++)
          		{
          			mes[j]=caracter;
             		archivo.get(caracter);
          		}
-         		int comparacionm;
-      			comparacionm=atoi(mes);//transforma una linea de caracteres en entero
-         		if(comparacionm==horaac->tm_mon+1)
+         		int mm;
+               int Cmes=horaac->tm_mon+1;
+      			mm=atoi(mes);//transforma una linea de caracteres en entero
+         		if(mm==Cmes)
          		{
-               	archivo.get(caracter);//lee caracter por caracter
-
-      				if(caracter=='/')
+      				if(caracter=='-')
       				{
       					archivo.get(caracter);
          				for(int m=0;m<=3;m++)
@@ -240,11 +275,46 @@ Ver_mis_eventos_para_toda_la_semana()
          					anio[m]=caracter;
             				archivo.get(caracter);
          				}
-         				int comparaciona;
-      					comparaciona=atoi(anio);//transforma una linea de caracteres en entero
-         				if(comparaciona==horaac->tm_year+1900)
+         				float aa;
+                     float Canio;
+                     Canio=horaac->tm_year+1900;
+      					aa=atoi(anio);//transforma una linea de caracteres en entero
+         				if(aa==Canio) //asignar en otra variable entera
          				{
-                        //imprimir 4 lineas
+                     	int a=0;
+                        char cadena[50];
+                     	while(a<5)
+                        {
+
+                           if(a=0)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<" "<<cadena<<endl;
+                           }
+                           if(a=1)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"NOMBRE DEL EVENTO:	"<<cadena<<endl;
+                           }
+                           if(a=2)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"DESCRIPCION DEL EVENTO:	"<<cadena<<endl;
+                           }
+                           if(a=3)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"HORA DE INICIO:		"<<cadena<<":00"<<endl;
+                           }
+                           if(a=4)
+                           {
+                           	archivo.getline(cadena,50);
+                           	cout<<"HORA DE FINALIZACION:	"<<cadena<<":00"<<endl<<endl;
+                           }
+
+                           a++;
+                        }
+
          				}
          			}
          		}
@@ -252,13 +322,10 @@ Ver_mis_eventos_para_toda_la_semana()
 			}
    	}
       archivo.get(caracter);
-		getch();
 	}
-		archivo.close();
-=======
+}
    getch();
-
->>>>>>> origin/master
+   archivo.close();
 }
 //--------------------------------------------------------------------------------//
 //--------------------------------------------------------------------------------//
@@ -280,48 +347,33 @@ main()
 
 	int s;
    do {
-   s=Principal();
-   switch(s)
-	{
-		case 1:
-			Ingresar_nuevo_evento();
-			break;
+   		s=Principal();
+   		switch(s)
+			{
+				case 1:
+					Ingresar_nuevo_evento();
+				break;
 
-		case 2:
-			Ver_mis_eventos_para_hoy();
-			break;
+				case 2:
+            	Ver_mis_eventos_para_hoy();
+				break;
 
-  	 	case 3:
-			Ver_mis_eventos_para_toda_la_semana();
-  	   	 break;
+  	 			case 3:
+					Ver_mis_eventos_para_toda_la_semana();
+  	   	 	break;
 
-      case 4:
-			cout<<"precione una tecla para salir"<<endl;;
-  	   	 break;
+      		case 4:
+					cout<<"precione una tecla para salir"<<endl;;
+  	   	 	break;
 
-		default:
-			cout<<"Ha ingresado un numero no valido"<<endl;
-			break;
-	}
-   }while(s!=4);
+				default:
+					cout<<"Ha ingresado un numero no valido"<<endl;
+				break;
+			}
+   	}while(s!=4);
 
    getch();
 }
-
-
-  /*pra acceder al los primeros hacer un  recorrido del archivo con
-   main()
-{
-char caracter;
-ifstream archivo("C:/BC5/Archivos/miarchivo.txt", ios::in);
-while(!archivo.eof())
-{
-archivo.get(caracter);
-cout<<caracter;
-}
-archivo.close();
-getch();
-}   atoi()*/
 
 
 
